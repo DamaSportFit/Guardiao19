@@ -2,204 +2,202 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Guardião 19">
 <meta name="theme-color" content="#1a2332">
-<title>19ª CIA IND / PMES — Mandados de Prisão</title>
+<title>Guardião 19 — 19ª CIA IND / PMES</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%;background:#111a24;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#b0c8d8}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#111a24}::-webkit-scrollbar-thumb{background:#2a3a4a;border-radius:2px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{min-height:100%;background:#111a24;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#c0d0e0;font-size:15px}
 
-.app-header{background:#1a2332;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #243040;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:20}
-.hdr-left{display:flex;align-items:center;gap:11px}
-.app-logo{width:38px;height:38px;background:#c8a84b;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.app-logo svg{width:22px;height:22px;fill:#1a2332}
-.app-title{font-size:13px;font-weight:700;color:#d0e0ee;letter-spacing:.3px}
-.app-sub{font-size:10px;color:#4a6070;margin-top:1px}
-.upd-badge{background:#1a2a1a;border:1px solid #2a3a2a;border-radius:4px;padding:4px 9px;font-size:10px;color:#5a9060;display:flex;align-items:center;gap:5px;white-space:nowrap}
+/* HEADER */
+.hdr{background:#1a2332;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #c8a84b;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:20}
+.hdr-l{display:flex;align-items:center;gap:12px}
+.logo{width:42px;height:42px;background:#c8a84b;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo svg{width:26px;height:26px;fill:#1a2332}
+.app-title{font-size:15px;font-weight:700;color:#ffffff;letter-spacing:.3px}
+.app-sub{font-size:12px;color:#7a9ab0;margin-top:2px}
+.upd{background:#1a2a1a;border:1px solid #2a4a2a;border-radius:5px;padding:5px 10px;font-size:11px;color:#5aaa60;display:flex;align-items:center;gap:5px}
 
-.sync-bar{padding:5px 14px;background:#131e2a;font-size:10px;color:#3a5060;display:flex;align-items:center;gap:6px;border-bottom:1px solid #1c2938}
-.sync-dot{width:7px;height:7px;border-radius:50%;background:#2ecc71;flex-shrink:0;transition:background .4s}
-.sync-dot.spin{background:#c8a84b}
-.sync-dot.err{background:#e04040}
+/* SYNC */
+.sync{padding:6px 16px;background:#0f1820;font-size:12px;color:#4a7080;display:flex;align-items:center;gap:7px;border-bottom:1px solid #1c2938}
+.dot{width:8px;height:8px;border-radius:50%;background:#2ecc71;flex-shrink:0}
+.dot.spin{background:#c8a84b;animation:pulse 1s infinite}
+.dot.err{background:#e04040}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-.toolbar{background:#1c2938;padding:8px 14px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #243040}
-.sw{flex:1;min-width:140px;position:relative}
-.sw input{width:100%;background:#131e2a;border:1px solid #243040;color:#b0c8d8;border-radius:4px;padding:7px 9px 7px 30px;font-size:12px;font-family:inherit;outline:none}
-.sw input:focus{border-color:#3a5a6a}
-.sw svg{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:#3a5060;fill:none;pointer-events:none}
-select{background:#131e2a;border:1px solid #243040;color:#b0c8d8;border-radius:4px;padding:7px 8px;font-size:12px;cursor:pointer;font-family:inherit;outline:none}
-.btn{border-radius:4px;padding:7px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px;border:1px solid;transition:background .12s}
-.btn-green{background:#162416;border-color:#243a24;color:#5a9060}.btn-green:hover{background:#1a2e1a}
-.btn-red{background:#241616;border-color:#3a2424;color:#906060}.btn-red:hover{background:#2e1a1a}
+/* TOOLBAR */
+.toolbar{background:#1c2938;padding:10px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #243040}
+.sw{flex:1;min-width:150px;position:relative}
+.sw input{width:100%;background:#131e2a;border:1.5px solid #2a3a4a;color:#d0e0f0;border-radius:6px;padding:9px 10px 9px 34px;font-size:14px;font-family:inherit;outline:none}
+.sw input::placeholder{color:#3a5060}
+.sw input:focus{border-color:#4a7090}
+.sw svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:#4a6070;fill:none;pointer-events:none}
+select{background:#131e2a;border:1.5px solid #2a3a4a;color:#d0e0f0;border-radius:6px;padding:9px 10px;font-size:14px;cursor:pointer;font-family:inherit;outline:none}
+select:focus{border-color:#4a7090}
+.btn-csv{background:#162416;border:1.5px solid #2a4a2a;color:#5aaa60;border-radius:6px;padding:9px 14px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;white-space:nowrap}
+.btn-csv:hover{background:#1a2e1a}
+.btn-csv svg{width:15px;height:15px;stroke:currentColor;fill:none}
 
-.stats-bar{background:#131e2a;padding:5px 14px;display:flex;gap:14px;flex-wrap:wrap;border-bottom:1px solid #1c2938}
-.stat{font-size:10px;color:#3a5060}.stat b{font-weight:700}
+/* STATS */
+.stats{background:#0f1820;padding:7px 16px;display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid #1c2938}
+.stat{font-size:12px;color:#4a6070}.stat b{font-weight:700;font-size:13px}
 .sc{color:#c8a84b}.sg{color:#2ecc71}.sr{color:#e05050}.sb{color:#5b9bd5}
 
-.gallery{padding:12px 14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
-.card{background:#1a2332;border:1px solid #243040;border-radius:7px;overflow:hidden;cursor:pointer;transition:border-color .12s;-webkit-tap-highlight-color:transparent;user-select:none}
-.card:hover{border-color:#3a5a6a}
-.card.s-capturado{border-color:#1a5030;background:#0d1f14}
-.card.s-nao_encontrado{border-color:#3a2510;background:#1a1208}
+/* GALLERY */
+.gallery{padding:14px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.card{background:#1a2332;border:1.5px solid #243040;border-radius:9px;overflow:hidden;cursor:pointer;transition:border-color .15s,transform .1s;user-select:none}
+.card:active{transform:scale(.97)}
+.card:hover{border-color:#4a6a8a}
+.card.s-cap{border-color:#1a5030;background:#0d1f14}
+.card.s-nao{border-color:#4a2a0a;background:#1a1208}
 .card-photo{width:100%;aspect-ratio:3/4;background:#131e2a;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .card-photo img{width:100%;height:100%;object-fit:cover}
 .card-sil{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
-.card-sil svg{width:54%;opacity:.12}
-.ribbon{position:absolute;top:5px;right:5px;border-radius:2px;padding:2px 5px;font-size:8px;font-weight:700;letter-spacing:.4px}
+.card-sil svg{width:55%;opacity:.12}
+.ribbon{position:absolute;top:6px;right:6px;border-radius:3px;padding:3px 6px;font-size:10px;font-weight:700;letter-spacing:.4px}
 .rb-c{background:#0a1f0a;border:1px solid #1a4a1a;color:#2ecc71}
 .rb-n{background:#1f1000;border:1px solid #4a2a0a;color:#e08030}
-.card-info{padding:6px 7px}
-.card-nome{font-size:10px;font-weight:700;color:#b0c8d8;line-height:1.3;word-break:break-word}
-.card-alc{font-size:9px;color:#c8a84b;margin-top:1px}
-.card-muni{font-size:9px;color:#3a5a6a;margin-top:2px}
-.obs-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#c8a84b;margin-left:4px;vertical-align:middle}
-.empty{text-align:center;padding:50px 20px;color:#3a5060;font-size:13px;grid-column:1/-1}
+.card-info{padding:8px 9px}
+.card-nome{font-size:12px;font-weight:700;color:#d0e0f0;line-height:1.35;word-break:break-word}
+.card-alc{font-size:11px;color:#c8a84b;margin-top:2px}
+.card-muni{font-size:11px;color:#4a7080;margin-top:3px}
+.obs-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#c8a84b;margin-left:5px;vertical-align:middle}
+.empty{text-align:center;padding:60px 20px;color:#3a5060;font-size:15px;grid-column:1/-1;line-height:1.8}
 
-/* overlays */
-.ov{background:rgba(0,0,0,.88);display:none;position:fixed;inset:0;z-index:50;overflow-y:auto;padding:14px}
+/* LOADING */
+.loading{position:fixed;inset:0;background:#111a24;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:200}
+.loading.hide{display:none}
+.loading-logo{width:64px;height:64px;background:#c8a84b;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.loading-logo svg{width:38px;height:38px;fill:#1a2332}
+.loading-t{font-size:15px;color:#6a9ab0;margin-top:12px}
+.loading-s{font-size:13px;color:#3a5060;margin-top:6px}
+
+/* MODAL OVERLAY */
+.ov{background:rgba(0,0,0,.9);display:none;position:fixed;inset:0;z-index:50;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .ov.open{display:block}
-.ov-inner{display:flex;align-items:flex-start;justify-content:center;min-height:100%}
-.modal{background:#1a2332;border:1px solid #243040;border-radius:9px;width:100%;max-width:520px;margin:auto}
-.mhead{background:#1c2a3a;padding:11px 15px;display:flex;align-items:center;justify-content:space-between;border-radius:9px 9px 0 0;position:sticky;top:0;z-index:5}
-.mhead h2{font-size:13px;font-weight:700;color:#c0d0e0}
-.mbadge{padding:2px 7px;border-radius:3px;font-size:9px;font-weight:700;margin-left:5px;letter-spacing:.3px}
+.ov-wrap{display:flex;align-items:flex-start;justify-content:center;min-height:100%;padding:14px}
+.modal{background:#1a2332;border:1.5px solid #2a3a4a;border-radius:10px;width:100%;max-width:540px;margin:auto}
+.mhead{background:#1c2a3a;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;border-radius:10px 10px 0 0;position:sticky;top:0;z-index:5;border-bottom:1px solid #2a3a4a}
+.mhead h2{font-size:15px;font-weight:700;color:#d8e8f8}
+.mbadge{padding:3px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-left:6px;letter-spacing:.3px}
 .mb-p{background:#2a2010;color:#c8a84b;border:1px solid #4a3a20}
 .mb-c{background:#0a1f0a;color:#2ecc71;border:1px solid #1a4a1a}
 .mb-n{background:#1f1000;color:#e08030;border:1px solid #4a2a0a}
-.mclose{background:none;border:none;color:#4a6070;cursor:pointer;font-size:22px;line-height:1;padding:0 4px}
-.mclose:hover{color:#c0d0e0}
-.mbody{padding:14px}
+.mclose{background:none;border:none;color:#5a7080;cursor:pointer;font-size:26px;line-height:1;padding:0 4px;touch-action:manipulation}
+.mclose:hover{color:#d0e0f0}
+.mbody{padding:16px}
 
-.photo-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
-.photo-box{width:84px;height:106px;background:#131e2a;border:2px dashed #243040;border-radius:6px;overflow:hidden;position:relative;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+/* FICHA */
+.photo-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.photo-box{width:90px;height:114px;background:#131e2a;border:2px dashed #2a3a4a;border-radius:7px;overflow:hidden;position:relative;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .photo-box img{width:100%;height:100%;object-fit:cover}
-.ph-hint{font-size:22px;text-align:center;pointer-events:none;opacity:.3}
-.photo-btn{position:absolute;bottom:0;left:0;right:0;background:rgba(8,16,26,.9);color:#5a90b0;font-size:9px;font-weight:600;text-align:center;padding:5px;cursor:pointer;border:none;font-family:inherit}
-.photo-btn:hover{background:rgba(16,32,50,.95);color:#80b8d8}
-.pnome{font-size:14px;font-weight:700;color:#c8d8e8;line-height:1.3}
-.palc{font-size:11px;color:#c8a84b;margin-top:2px}
-.pmuni{font-size:10px;color:#3a5a6a;margin-top:5px}
-.pmcount{font-size:10px;color:#3a5060;background:#131e2a;border-radius:3px;padding:2px 7px;display:inline-block;margin-top:5px}
+.ph-hint{font-size:28px;opacity:.25}
+.photo-btn{position:absolute;bottom:0;left:0;right:0;background:rgba(8,16,26,.92);color:#5a90b0;font-size:11px;font-weight:600;text-align:center;padding:6px;cursor:pointer;border:none;font-family:inherit;touch-action:manipulation}
+.photo-btn:hover,.photo-btn:active{background:rgba(16,32,52,.98);color:#90c0e0}
+.pnome{font-size:16px;font-weight:700;color:#d8e8f8;line-height:1.3}
+.palc{font-size:13px;color:#c8a84b;margin-top:3px}
+.pmuni{font-size:12px;color:#4a7080;margin-top:6px}
+.pmcount{font-size:12px;color:#3a6070;background:#131e2a;border-radius:4px;padding:3px 8px;display:inline-block;margin-top:6px}
 
-.sec{font-size:9px;color:#3a5060;text-transform:uppercase;letter-spacing:.7px;margin:13px 0 6px;border-bottom:1px solid #1c2938;padding-bottom:3px}
-.fg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.fi{background:#131e2a;border-radius:4px;padding:7px 9px}
-.fi label{font-size:9px;color:#3a5060;display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.4px}
-.fi p{font-size:11px;color:#90b0c0}
+.sec{font-size:11px;color:#4a6070;text-transform:uppercase;letter-spacing:.8px;margin:14px 0 8px;border-bottom:1px solid #1c2938;padding-bottom:4px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fi{background:#131e2a;border-radius:5px;padding:9px 11px}
+.fi label{font-size:11px;color:#4a6070;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.4px}
+.fi p{font-size:13px;color:#a0c0d8}
 .fi-full{grid-column:1/-1}
-.mitem{background:#131e2a;border-radius:4px;padding:7px 9px;margin-bottom:5px;border-left:2px solid #243040}
-.mnum{font-size:10px;color:#3a5060;word-break:break-all}
-.mtags{display:flex;gap:4px;margin-top:3px;flex-wrap:wrap}
-.mtag{font-size:9px;color:#5a4020;background:#100c00;border:1px solid #2a1a00;border-radius:2px;padding:1px 5px}
+.mitem{background:#131e2a;border-radius:5px;padding:9px 11px;margin-bottom:6px;border-left:2px solid #2a3a4a}
+.mnum{font-size:11px;color:#3a5060;word-break:break-all;line-height:1.4}
+.mtags{display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}
+.mtag{font-size:11px;color:#6a5030;background:#100c00;border:1px solid #2a1a00;border-radius:3px;padding:2px 6px}
 
-.status-sec{margin-top:14px;border-top:1px solid #1c2938;padding-top:13px}
-.sbtns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px}
-.sbtn{border-radius:4px;padding:8px 4px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid;text-align:center;font-family:inherit;line-height:1.4;transition:opacity .12s}
+/* STATUS */
+.status-sec{margin-top:16px;border-top:1px solid #1c2938;padding-top:14px}
+.sbtns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
+.sbtn{border-radius:6px;padding:11px 4px;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid;text-align:center;font-family:inherit;line-height:1.4;transition:opacity .12s;touch-action:manipulation}
 .sbtn:not(.active){opacity:.35}
 .sbtn.active{opacity:1}
 .sbtn-p{background:#1a2010;border-color:#3a4a20;color:#c8a84b}
 .sbtn-c{background:#0a1f0a;border-color:#1a4a1a;color:#2ecc71}
 .sbtn-n{background:#1f1000;border-color:#4a2a0a;color:#e08030}
-.cap-fields{display:grid;gap:7px;margin-top:9px}
-.cap-fields label{font-size:10px;color:#4a7060;display:block;margin-bottom:2px}
-.cap-fields input{width:100%;background:#0d161f;border:1px solid #1c2a38;color:#90b0c0;border-radius:4px;padding:7px 9px;font-size:12px;font-family:inherit;outline:none}
-.btn-save{width:100%;background:#1a3a1a;border:1px solid #2a5a2a;color:#2ecc71;border-radius:4px;padding:9px;font-size:12px;font-weight:700;cursor:pointer;margin-top:9px;font-family:inherit}
-.btn-save:hover{background:#1e4a1e}
+.cap-fields{display:grid;gap:8px;margin-top:10px}
+.cap-fields label{font-size:12px;color:#4a8070;display:block;margin-bottom:3px}
+.cap-fields input{width:100%;background:#0d161f;border:1.5px solid #1c2a38;color:#a0c0c0;border-radius:5px;padding:9px 11px;font-size:14px;font-family:inherit;outline:none}
+.cap-fields input:focus{border-color:#2a5a5a}
+.btn-save{width:100%;background:#1a3a1a;border:1.5px solid #2a5a2a;color:#2ecc71;border-radius:6px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px;font-family:inherit;touch-action:manipulation}
+.btn-save:hover,.btn-save:active{background:#1e4a1e}
 .btn-save:disabled{opacity:.5;cursor:not-allowed}
 
-.obs-block{background:#131e2a;border-radius:5px;padding:11px}
-.obs-block label{font-size:9px;color:#3a5060;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px}
-.obs-in{width:100%;background:#0d161f;border:1px solid #1c2a38;color:#90b0c0;border-radius:4px;padding:7px 9px;font-size:12px;font-family:inherit;outline:none;margin-bottom:7px}
+/* OBS */
+.obs-block{background:#131e2a;border-radius:6px;padding:13px}
+.obs-block label{font-size:12px;color:#4a6070;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:5px}
+.obs-in{width:100%;background:#0d161f;border:1.5px solid #1c2a38;color:#a0c0d0;border-radius:5px;padding:9px 11px;font-size:14px;font-family:inherit;outline:none;margin-bottom:8px}
 .obs-in:focus{border-color:#2a4a5a}
-textarea.obs-in{resize:vertical;min-height:68px;line-height:1.5;margin-bottom:0}
-.btn-obs{background:#1a2a3a;border:1px solid #243a4a;color:#5a90b0;border-radius:4px;padding:7px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:7px}
-.btn-obs:hover{background:#1e3040}
+textarea.obs-in{resize:vertical;min-height:80px;line-height:1.5;margin-bottom:0}
+.btn-obs{background:#1a2a3a;border:1.5px solid #243a4a;color:#5a90b0;border-radius:5px;padding:9px 14px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:8px;touch-action:manipulation}
+.btn-obs:hover,.btn-obs:active{background:#1e3040}
 .btn-obs:disabled{opacity:.5;cursor:not-allowed}
-.obs-hist{margin-top:9px}
-.obs-entry{background:#0d161f;border-radius:3px;padding:7px 9px;margin-bottom:5px;border-left:2px solid #2a3a4a}
-.obs-meta{font-size:9px;color:#3a5060;margin-bottom:2px}
-.obs-txt{font-size:11px;color:#80a0b0;line-height:1.5}
-.obs-empty{font-size:10px;color:#2a4050;padding:4px 0}
+.obs-hist{margin-top:10px}
+.obs-entry{background:#0d161f;border-radius:4px;padding:9px 11px;margin-bottom:6px;border-left:2px solid #2a3a4a}
+.obs-meta{font-size:11px;color:#3a6070;margin-bottom:3px}
+.obs-txt{font-size:13px;color:#90b0c0;line-height:1.5}
+.obs-empty{font-size:13px;color:#2a4050;padding:6px 0}
 
 /* PIN */
-.pin-ov{background:rgba(0,0,0,.94);display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center}
+.pin-ov{background:rgba(0,0,0,.95);display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center}
 .pin-ov.open{display:flex}
-.pin-box{background:#1a2332;border:1px solid #243040;border-radius:10px;padding:26px 22px;width:290px;text-align:center}
-.pin-icon{font-size:30px;display:block;margin-bottom:10px}
-.pin-box h3{font-size:14px;font-weight:700;color:#b0c8d8;margin-bottom:4px}
-.pin-purpose{font-size:10px;color:#4a6a80;background:#131e2a;border-radius:3px;padding:4px 8px;margin:8px auto 12px;display:inline-block}
-.pin-box p{font-size:11px;color:#3a5060;margin-bottom:12px}
-.pin-input{width:100%;background:#131e2a;border:1px solid #243040;color:#b0c8d8;border-radius:5px;padding:10px;font-size:20px;text-align:center;letter-spacing:8px;font-family:inherit;margin-bottom:8px;outline:none}
-.pin-input:focus{border-color:#3a5a6a}
-.pin-err{font-size:10px;color:#c04040;min-height:14px;margin-bottom:7px}
-.pin-btn{width:100%;background:#1a2d3a;border:1px solid #243a4a;color:#90b8d0;border-radius:5px;padding:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
-.pin-btn:hover{background:#1e3545}
-.pin-cancel{font-size:11px;color:#3a5060;cursor:pointer;margin-top:10px;background:none;border:none;font-family:inherit;display:block;width:100%}
+.pin-box{background:#1a2332;border:1.5px solid #2a3a4a;border-radius:12px;padding:28px 24px;width:300px;text-align:center}
+.pin-icon{font-size:32px;display:block;margin-bottom:12px}
+.pin-box h3{font-size:16px;font-weight:700;color:#c0d0e0;margin-bottom:5px}
+.pin-purpose{font-size:12px;color:#4a7090;background:#131e2a;border-radius:4px;padding:5px 10px;margin:10px auto 14px;display:inline-block}
+.pin-box p{font-size:13px;color:#3a5060;margin-bottom:14px}
+.pin-input{width:100%;background:#131e2a;border:1.5px solid #2a3a4a;color:#c0d0e0;border-radius:6px;padding:12px;font-size:22px;text-align:center;letter-spacing:8px;font-family:inherit;margin-bottom:10px;outline:none}
+.pin-input:focus{border-color:#4a7090}
+.pin-err{font-size:12px;color:#d04040;min-height:16px;margin-bottom:8px}
+.pin-btn{width:100%;background:#1a2d3a;border:1.5px solid #2a4a5a;color:#90b8d0;border-radius:6px;padding:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;touch-action:manipulation}
+.pin-btn:hover,.pin-btn:active{background:#1e3545}
+.pin-cancel{font-size:13px;color:#3a5060;cursor:pointer;margin-top:12px;background:none;border:none;font-family:inherit;display:block;width:100%;touch-action:manipulation}
 .pin-cancel:hover{color:#6a9090}
 
-/* CSV */
-.upl-ov{background:rgba(0,0,0,.9);display:none;position:fixed;inset:0;z-index:60;align-items:center;justify-content:center;padding:14px}
+/* CSV MODAL */
+.upl-ov{background:rgba(0,0,0,.92);display:none;position:fixed;inset:0;z-index:60;align-items:center;justify-content:center;padding:16px}
 .upl-ov.open{display:flex}
-.upl-modal{background:#1a2332;border:1px solid #243040;border-radius:9px;width:100%;max-width:420px}
-.upl-area{margin:14px;background:#0d1f0d;border:2px dashed #243a24;border-radius:5px;text-align:center;padding:22px 14px;cursor:pointer;transition:background .12s}
-.upl-area:hover{background:#0f2510}
-.upl-icon{font-size:26px;display:block;margin-bottom:7px}
-.upl-area p{font-size:11px;color:#3a6040;line-height:1.6}
-.upl-ok{font-size:12px;color:#2ecc71;margin-top:7px;font-weight:700}
-.upl-err{font-size:11px;color:#e04040;margin-top:7px}
-
-/* Loading */
-.loading-screen{position:fixed;inset:0;background:#111a24;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:200}
-.loading-screen.hide{display:none}
-.loading-logo{width:60px;height:60px;background:#c8a84b;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.loading-logo svg{width:36px;height:36px;fill:#1a2332}
-.loading-txt{font-size:13px;color:#5a8090;margin-top:10px}
-.loading-sub{font-size:11px;color:#3a5060;margin-top:5px}
+.upl-modal{background:#1a2332;border:1.5px solid #2a3a4a;border-radius:10px;width:100%;max-width:440px}
+.upl-area{margin:16px;background:#0d1f0d;border:2px dashed #2a4a2a;border-radius:6px;text-align:center;padding:24px 16px;cursor:pointer;transition:background .12s;touch-action:manipulation}
+.upl-area:hover,.upl-area:active{background:#0f2510}
+.upl-icon{font-size:28px;display:block;margin-bottom:8px}
+.upl-area p{font-size:13px;color:#3a6040;line-height:1.7}
+.upl-ok{font-size:13px;color:#2ecc71;margin-top:8px;font-weight:700}
+.upl-err{font-size:12px;color:#e04040;margin-top:8px}
 </style>
 </head>
 <body>
 
-<!-- Loading -->
-<div class="loading-screen" id="loadingScreen">
-  <div class="loading-logo">
-    <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2l8 4V17l-8 4-8-4V8.2l8-4zM12 8a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z"/></svg>
-  </div>
-  <div class="loading-txt">Guardião 19 — 19ª CIA IND / PMES</div>
-  <div class="loading-sub" id="loadingMsg">Conectando ao Firebase...</div>
+<div class="loading" id="loadingScreen">
+  <div class="loading-logo"><svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2l8 4V17l-8 4-8-4V8.2l8-4zM12 8a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z"/></svg></div>
+  <div class="loading-t">Guardião 19 — 19ª CIA IND / PMES</div>
+  <div class="loading-s" id="loadingMsg">Conectando ao Firebase...</div>
 </div>
 
-<!-- App -->
 <div id="app" style="display:none">
-  <div class="app-header">
-    <div class="hdr-left">
-      <div class="app-logo">
-        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2l8 4V17l-8 4-8-4V8.2l8-4zM12 8a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z"/></svg>
-      </div>
+  <div class="hdr">
+    <div class="hdr-l">
+      <div class="logo"><svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2l8 4V17l-8 4-8-4V8.2l8-4zM12 8a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z"/></svg></div>
       <div>
         <div class="app-title">19ª CIA IND / PMES — Mandados de Prisão</div>
         <div class="app-sub">Tríplice Divisa · ES / MG / BA · Base BNMP 3.0</div>
       </div>
     </div>
-    <div class="upd-badge">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <span id="updText">—</span>
-    </div>
+    <div class="upd">🕐 <span id="updText">—</span></div>
   </div>
-
-  <div class="sync-bar">
-    <span class="sync-dot spin" id="syncDot"></span>
-    <span id="syncMsg">Carregando dados...</span>
-  </div>
-
+  <div class="sync"><span class="dot spin" id="syncDot"></span><span id="syncMsg">Carregando...</span></div>
   <div class="toolbar">
     <div class="sw">
       <svg viewBox="0 0 24 24" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input id="srch" type="text" placeholder="Nome ou alcunha..." oninput="renderGallery()">
+      <input id="srch" type="text" placeholder="Buscar nome ou alcunha..." oninput="renderGallery()">
     </div>
     <select id="muni" onchange="renderGallery()">
       <option value="">Todos os municípios</option>
@@ -214,19 +212,18 @@ textarea.obs-in{resize:vertical;min-height:68px;line-height:1.5;margin-bottom:0}
       <option value="capturado">Capturado</option>
       <option value="nao_encontrado">Não encontrado</option>
     </select>
-    <button class="btn btn-green" onclick="askPin('csv')">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    <button class="btn-csv" id="btnCsv">
+      <svg viewBox="0 0 24 24" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
       Atualizar CSV
     </button>
   </div>
-
-  <div class="stats-bar" id="statsBar"></div>
+  <div class="stats" id="statsBar"></div>
   <div class="gallery" id="gallery"></div>
 </div>
 
 <!-- MODAL FICHA -->
-<div class="ov" id="modalOv" onclick="closeModalOuter(event)">
-  <div class="ov-inner"><div class="modal" id="modal"></div></div>
+<div class="ov" id="modalOv">
+  <div class="ov-wrap"><div class="modal" id="modal"></div></div>
 </div>
 
 <!-- PIN -->
@@ -236,48 +233,45 @@ textarea.obs-in{resize:vertical;min-height:68px;line-height:1.5;margin-bottom:0}
     <h3>Acesso restrito</h3>
     <div class="pin-purpose" id="pinPurpose">—</div>
     <p>Digite a senha de administrador</p>
-    <input class="pin-input" type="password" id="pinIn" placeholder="••••" maxlength="20" onkeydown="if(event.key==='Enter')chkPin()">
+    <input class="pin-input" type="password" id="pinIn" placeholder="••••" maxlength="20">
     <div class="pin-err" id="pinErr"></div>
-    <button class="pin-btn" onclick="chkPin()">Confirmar</button>
-    <button class="pin-cancel" onclick="closePinOv()">Cancelar</button>
+    <button class="pin-btn" id="pinConfirm">Confirmar</button>
+    <button class="pin-cancel" id="pinCancel">Cancelar</button>
   </div>
 </div>
 
-<!-- CSV UPLOAD -->
-<div class="upl-ov" id="uplOv" onclick="closeUplOuter(event)">
+<!-- CSV -->
+<div class="upl-ov" id="uplOv">
   <div class="upl-modal">
     <div class="mhead">
       <h2>Importar arquivos CSV</h2>
-      <button class="mclose" onclick="closeUpl()">×</button>
+      <button class="mclose" id="btnCloseUpl">×</button>
     </div>
     <div class="mbody">
-      <p style="font-size:11px;color:#3a5060;margin-bottom:10px;line-height:1.6">Selecione os arquivos CSV exportados do BNMP 3.0. O município é detectado pelo nome do arquivo automaticamente.</p>
-      <div class="upl-area" onclick="document.getElementById('csvIn').click()">
+      <p style="font-size:13px;color:#4a7080;margin-bottom:12px;line-height:1.7">Selecione os arquivos CSV do BNMP 3.0. O município é detectado pelo nome do arquivo.</p>
+      <div class="upl-area" id="uplArea">
         <span class="upl-icon">📂</span>
-        <p>Clique para selecionar arquivos CSV<br><span style="font-size:9px;color:#2a4030">Múltiplos arquivos permitidos</span></p>
+        <p>Toque para selecionar arquivos CSV<br><span style="font-size:11px;color:#2a4030">Múltiplos arquivos permitidos</span></p>
         <div class="upl-ok" id="uplOk" style="display:none"></div>
         <div class="upl-err" id="uplErr" style="display:none"></div>
       </div>
-      <input type="file" id="csvIn" accept=".csv" multiple style="display:none" onchange="handleCSV(event)">
-      <div style="font-size:10px;color:#2a4040;margin-top:9px;line-height:1.6">
-        ℹ️ Nomes esperados: relatorio_-_Mucurici.csv · relatorio_-_Montanha.csv · relatorio_-_Pinheiros.csv · relatorio_-_Ponto_Belo.csv
+      <input type="file" id="csvIn" accept=".csv" multiple style="display:none">
+      <div style="font-size:11px;color:#2a4040;margin-top:10px;line-height:1.7">
+        ℹ️ relatorio_-_Mucurici.csv · relatorio_-_Montanha.csv · relatorio_-_Pinheiros.csv · relatorio_-_Ponto_Belo.csv
       </div>
     </div>
   </div>
 </div>
 
-<input type="file" id="photoIn" accept="image/*" style="display:none" onchange="doLoadPhoto(event)">
+<input type="file" id="photoIn" accept="image/*" style="display:none">
 
-<!-- FIREBASE SDK -->
+<!-- FIREBASE -->
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, onSnapshot, collection, getDocs }
+import { initializeApp }    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc, collection, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ─────────────────────────────────────────────
-// CONFIGURAÇÃO FIREBASE
-// ─────────────────────────────────────────────
-const firebaseConfig = {
+const FIREBASE_CONFIG = {
   apiKey: "AIzaSyAtspR304VY-zxN5tHKF0Zk-gzf3c6qkJc",
   authDomain: "guardiao-19.firebaseapp.com",
   projectId: "guardiao-19",
@@ -285,51 +279,40 @@ const firebaseConfig = {
   messagingSenderId: "645526375720",
   appId: "1:645526375720:web:39288abc20cc1679d8141d"
 };
-
 const ADMIN_PIN = "1907";
 const NI = ['não informado','nao informado','nao consta','não consta','nada consta','nc','n/c'];
 const isNI = v => !v || NI.includes((v||'').toLowerCase().trim());
 
-const app = initializeApp(firebaseConfig);
-const db  = getFirestore(app);
+const fbApp = initializeApp(FIREBASE_CONFIG);
+const db    = getFirestore(fbApp);
 
-// ─────────────────────────────────────────────
-// ESTADO GLOBAL
-// ─────────────────────────────────────────────
-let RAW = [];
-let OPS = {};          // { "NOME||MUNI": { status, obs[], capDate, capLocal, capResp, foto } }
-let updDate = '';
-let pinCallback = null;
+// ── STATE ──────────────────────────────────────────
+let RAW = [], OPS = {}, updDate = '';
 let _nome = '', _muni = '';
+let pinCallback = null;
 
-// ─────────────────────────────────────────────
-// INICIALIZAÇÃO
-// ─────────────────────────────────────────────
+// INDEX MAP: card index → {nome, muni} — avoids encoding issues
+const cardMap = {};
+
+// ── INIT ───────────────────────────────────────────
 async function init() {
-  setLoading('Carregando base de dados...');
+  setLoadMsg('Carregando base de dados...');
   try {
-    // Carrega RAW (indivíduos)
     const rawDoc = await getDoc(doc(db, 'config', 'raw'));
     if (rawDoc.exists()) RAW = rawDoc.data().dados || [];
-
-    // Carrega data de atualização
-    const updDoc = await getDoc(doc(db, 'config', 'meta'));
-    if (updDoc.exists()) updDate = updDoc.data().updDate || '';
-
-    // Carrega operações (status + obs) — listener em tempo real
-    setLoading('Sincronizando operações...');
+    const metaDoc = await getDoc(doc(db, 'config', 'meta'));
+    if (metaDoc.exists()) updDate = metaDoc.data().updDate || '';
+    showUpd();
+    setLoadMsg('Sincronizando em tempo real...');
     onSnapshot(collection(db, 'ops'), snap => {
       snap.forEach(d => { OPS[d.id] = d.data(); });
-      setSyncStatus(true, 'Firebase · dados em tempo real');
+      setSyncOk('Firebase · dados em tempo real para toda a tropa');
       renderGallery();
     });
-
-    showUpd();
     hideLoading();
-
   } catch(e) {
-    setLoading('Erro ao conectar: ' + e.message);
-    setSyncStatus(false, 'Erro de conexão — verifique as regras do Firestore');
+    setLoadMsg('Erro: ' + e.message);
+    setSyncErr('Erro de conexão com Firebase');
     console.error(e);
     setTimeout(hideLoading, 3000);
   }
@@ -339,197 +322,151 @@ function hideLoading() {
   document.getElementById('loadingScreen').classList.add('hide');
   document.getElementById('app').style.display = 'block';
 }
-function setLoading(msg) {
-  document.getElementById('loadingMsg').textContent = msg;
+function setLoadMsg(m) { document.getElementById('loadingMsg').textContent = m; }
+function setSyncOk(m)  { const d=document.getElementById('syncDot'); d.className='dot'; document.getElementById('syncMsg').textContent=m; }
+function setSyncSpin(m){ const d=document.getElementById('syncDot'); d.className='dot spin'; document.getElementById('syncMsg').textContent=m; }
+function setSyncErr(m) { const d=document.getElementById('syncDot'); d.className='dot err'; document.getElementById('syncMsg').textContent=m; }
+function showUpd()     { document.getElementById('updText').textContent = updDate || 'Sem atualização'; }
+function nowFull()     {
+  const d=new Date();
+  return [d.getDate(),d.getMonth()+1,d.getFullYear()].map(n=>String(n).padStart(2,'0')).join('/')+' '+
+         [d.getHours(),d.getMinutes()].map(n=>String(n).padStart(2,'0')).join(':');
 }
+function pKey(n,m) {
+  return (n+'||'+m).replace(/[^\w\u00C0-\u024F|]/g,'_');
+}
+function getOp(n,m) { return OPS[pKey(n,m)]||{status:'pendente',obs:[],capDate:'',capLocal:'',capResp:'',foto:''}; }
 
-// ─────────────────────────────────────────────
-// FIREBASE — SALVAR OPERAÇÃO
-// ─────────────────────────────────────────────
-async function saveOp(nome, muni, data) {
-  setSyncStatus(false, 'Salvando...');
+// ── SAVE ───────────────────────────────────────────
+async function saveOp(n, m, data) {
+  setSyncSpin('Salvando...');
   try {
-    const key = pKey(nome, muni);
-    await setDoc(doc(db, 'ops', key), data, { merge: true });
-    setSyncStatus(true, 'Salvo · visível para toda a tropa agora');
-  } catch(e) {
-    setSyncStatus(false, 'Erro ao salvar: ' + e.message);
-    alert('Erro ao salvar. Verifique a conexão.');
-  }
+    await setDoc(doc(db,'ops',pKey(n,m)), data, {merge:true});
+    setSyncOk('Salvo · visível para toda a tropa agora');
+  } catch(e) { setSyncErr('Erro ao salvar: '+e.message); alert('Erro ao salvar. Verifique a conexão.'); }
 }
-
-// ─────────────────────────────────────────────
-// FIREBASE — SALVAR RAW (CSV)
-// ─────────────────────────────────────────────
 async function saveRaw() {
-  await setDoc(doc(db, 'config', 'raw'), { dados: RAW });
-  const M = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
-  const d = new Date();
-  updDate = String(d.getDate()).padStart(2,'0') + M[d.getMonth()] + d.getFullYear();
-  await setDoc(doc(db, 'config', 'meta'), { updDate });
+  await setDoc(doc(db,'config','raw'),{dados:RAW});
+  const M=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+  const d=new Date();
+  updDate=String(d.getDate()).padStart(2,'0')+M[d.getMonth()]+d.getFullYear();
+  await setDoc(doc(db,'config','meta'),{updDate});
   showUpd();
 }
 
-// ─────────────────────────────────────────────
-// UTILIDADES
-// ─────────────────────────────────────────────
-function setSyncStatus(ok, msg) {
-  const dot = document.getElementById('syncDot');
-  dot.className = 'sync-dot' + (ok ? '' : ' spin');
-  document.getElementById('syncMsg').textContent = msg;
-}
-function showUpd() {
-  document.getElementById('updText').textContent = updDate ? 'Atualizado em ' + updDate : 'Sem atualização';
-}
-function nowFull() {
-  const d = new Date();
-  return [d.getDate(),d.getMonth()+1,d.getFullYear()].map(n=>String(n).padStart(2,'0')).join('/') +
-    ' ' + [d.getHours(),d.getMinutes()].map(n=>String(n).padStart(2,'0')).join(':');
-}
-function pKey(n, m) { return (n + '||' + m).replace(/[^a-zA-Z0-9À-ÿ|_\- ]/g, '_'); }
-function getOp(n, m) { return OPS[pKey(n,m)] || {status:'pendente', obs:[], capDate:'', capLocal:'', capResp:'', foto:''}; }
-
-// ─────────────────────────────────────────────
-// DADOS
-// ─────────────────────────────────────────────
+// ── PERSONS ────────────────────────────────────────
 function getPersons() {
-  const map = {};
-  RAW.forEach(r => {
-    const k = pKey(r['Nome'], r['municipio']);
-    if (!map[k]) map[k] = {
-      nome: r['Nome'], alcunha: r['Alcunha'],
-      mae: r['Nome da Mãe'], pai: r['Nome do Pai'],
-      nasc: r['Data de Nascimento'],
-      municipio: r['municipio'], mandados: []
-    };
-    map[k].mandados.push({num:r['Número'], data:r['Data'], orgao:r['Órgão Expedidor'], peca:r['Peça']});
+  const map={};
+  RAW.forEach(r=>{
+    const k=pKey(r['Nome'],r['municipio']);
+    if(!map[k]) map[k]={nome:r['Nome'],alcunha:r['Alcunha'],mae:r['Nome da Mãe'],pai:r['Nome do Pai'],nasc:r['Data de Nascimento'],municipio:r['municipio'],mandados:[]};
+    map[k].mandados.push({num:r['Número'],data:r['Data'],orgao:r['Órgão Expedidor'],peca:r['Peça']});
   });
   return Object.values(map);
 }
-
 function filtered() {
-  const q = (document.getElementById('srch').value||'').toLowerCase();
-  const m = document.getElementById('muni').value;
-  const s = document.getElementById('stf').value;
-  return getPersons().filter(p => {
-    if (m && p.municipio !== m) return false;
-    if (s && getOp(p.nome,p.municipio).status !== s) return false;
-    if (q && !(p.nome+' '+(isNI(p.alcunha)?'':p.alcunha)).toLowerCase().includes(q)) return false;
+  const q=(document.getElementById('srch').value||'').toLowerCase();
+  const m=document.getElementById('muni').value;
+  const s=document.getElementById('stf').value;
+  return getPersons().filter(p=>{
+    if(m&&p.municipio!==m) return false;
+    if(s&&getOp(p.nome,p.municipio).status!==s) return false;
+    if(q&&!(p.nome+' '+(isNI(p.alcunha)?'':p.alcunha)).toLowerCase().includes(q)) return false;
     return true;
   });
 }
 
-// ─────────────────────────────────────────────
-// GALERIA
-// ─────────────────────────────────────────────
-const SIL = `<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="38" r="22" fill="#2a3a4a"/>
-  <path d="M10 130 Q10 80 50 80 Q90 80 90 130Z" fill="#2a3a4a"/>
-</svg>`;
+// ── GALLERY ────────────────────────────────────────
+const SIL=`<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="38" r="22" fill="#2a3a4a"/><path d="M10 130 Q10 80 50 80 Q90 80 90 130Z" fill="#2a3a4a"/></svg>`;
 
 window.renderGallery = function() {
-  const ps = filtered(), all = getPersons();
-  const cnt = {pendente:0, capturado:0, nao_encontrado:0};
-  all.forEach(p => { const st = getOp(p.nome,p.municipio).status; if(cnt[st]!==undefined) cnt[st]++; });
-
-  document.getElementById('statsBar').innerHTML =
-    `<div class="stat">Total: <b class="sc">${all.length}</b></div>` +
-    `<div class="stat">Pendentes: <b class="sc">${cnt.pendente}</b></div>` +
-    `<div class="stat">Capturados: <b class="sg">${cnt.capturado}</b></div>` +
-    `<div class="stat">Não encontrados: <b class="sr">${cnt.nao_encontrado}</b></div>` +
+  const ps=filtered(), all=getPersons();
+  const cnt={pendente:0,capturado:0,nao_encontrado:0};
+  all.forEach(p=>{const st=getOp(p.nome,p.municipio).status; if(cnt[st]!==undefined)cnt[st]++;});
+  document.getElementById('statsBar').innerHTML=
+    `<div class="stat">Total: <b class="sc">${all.length}</b></div>`+
+    `<div class="stat">Pendentes: <b class="sc">${cnt.pendente}</b></div>`+
+    `<div class="stat">Capturados: <b class="sg">${cnt.capturado}</b></div>`+
+    `<div class="stat">Não encontrados: <b class="sr">${cnt.nao_encontrado}</b></div>`+
     `<div class="stat">Exibidos: <b class="sb">${ps.length}</b></div>`;
 
-  const g = document.getElementById('gallery');
-  if (!RAW.length) {
-    g.innerHTML = '<div class="empty">📋 Nenhuma base carregada.<br>Use o botão <b>Atualizar CSV</b> para importar os dados do BNMP.</div>';
+  const g=document.getElementById('gallery');
+  if(!RAW.length){
+    g.innerHTML='<div class="empty">📋 Base vazia.<br>Use <b>Atualizar CSV</b> para importar os dados do BNMP.</div>';
     return;
   }
-  if (!ps.length) {
-    g.innerHTML = '<div class="empty">🔍 Nenhum registro encontrado.</div>';
-    return;
-  }
-  g.innerHTML = ps.map(p => {
-    const op = getOp(p.nome, p.municipio);
-    const alc = !isNI(p.alcunha) ? p.alcunha : '';
-    const sClass = op.status==='capturado' ? 's-capturado' : op.status==='nao_encontrado' ? 's-nao_encontrado' : '';
-    const ribbon = op.status==='capturado' ? '<div class="ribbon rb-c">PRESO</div>' :
-                   op.status==='nao_encontrado' ? '<div class="ribbon rb-n">N/ENCON.</div>' : '';
-    const obsDot = (op.obs && op.obs.length) ? '<span class="obs-dot"></span>' : '';
-    const foto = op.foto ? `<img src="${op.foto}" alt="Foto">` : `<div class="card-sil">${SIL}</div>`;
-    return `<div class="card ${sClass}" onclick="openModal(${JSON.stringify(p.nome)},${JSON.stringify(p.municipio)})">
+  if(!ps.length){g.innerHTML='<div class="empty">🔍 Nenhum registro encontrado.</div>';return;}
+
+  // Clear and rebuild cardMap
+  Object.keys(cardMap).forEach(k=>delete cardMap[k]);
+
+  g.innerHTML=ps.map((p,i)=>{
+    cardMap[i]={nome:p.nome, muni:p.municipio};
+    const op=getOp(p.nome,p.municipio);
+    const alc=!isNI(p.alcunha)?p.alcunha:'';
+    const sClass=op.status==='capturado'?'s-cap':op.status==='nao_encontrado'?'s-nao':'';
+    const ribbon=op.status==='capturado'?'<div class="ribbon rb-c">PRESO</div>':op.status==='nao_encontrado'?'<div class="ribbon rb-n">N/ENCON.</div>':'';
+    const obsDot=(op.obs&&op.obs.length)?'<span class="obs-dot"></span>':'';
+    const foto=op.foto?`<img src="${op.foto}" alt="Foto">`:`<div class="card-sil">${SIL}</div>`;
+    return `<div class="card ${sClass}" data-idx="${i}">
       <div class="card-photo">${foto}${ribbon}</div>
       <div class="card-info">
         <div class="card-nome">${p.nome}${obsDot}</div>
-        ${alc ? `<div class="card-alc">"${alc}"</div>` : ''}
+        ${alc?`<div class="card-alc">"${alc}"</div>`:''}
         <div class="card-muni">${p.municipio}</div>
       </div>
     </div>`;
   }).join('');
 };
 
-// ─────────────────────────────────────────────
-// FICHA
-// ─────────────────────────────────────────────
+// ── MODAL ──────────────────────────────────────────
 function calcIdade(nasc) {
-  if (!nasc) return null;
-  const [d,m,a] = nasc.split('/').map(Number);
-  const t = new Date(), b = new Date(a,m-1,d);
-  let age = t.getFullYear()-b.getFullYear();
-  if (t < new Date(t.getFullYear(),m-1,d)) age--;
-  return age >= 0 && age < 120 ? age : null;
+  if(!nasc) return null;
+  const [d,m,a]=nasc.split('/').map(Number);
+  const t=new Date(),b=new Date(a,m-1,d);
+  let age=t.getFullYear()-b.getFullYear();
+  if(t<new Date(t.getFullYear(),m-1,d))age--;
+  return age>=0&&age<120?age:null;
 }
 
 window.openModal = function(nome, muni) {
-  _nome = nome; _muni = muni;
-  const p = getPersons().find(x => x.nome===nome && x.municipio===muni);
-  if (!p) return;
-  const op = getOp(nome, muni);
-  const idade = calcIdade(p.nasc);
-  const alc = !isNI(p.alcunha) ? p.alcunha : '';
+  _nome=nome; _muni=muni;
+  const p=getPersons().find(x=>x.nome===nome&&x.municipio===muni);
+  if(!p) return;
+  const op=getOp(nome,muni);
+  const idade=calcIdade(p.nasc);
+  const alc=!isNI(p.alcunha)?p.alcunha:'';
+  const badgeCls=op.status==='capturado'?'mb-c':op.status==='nao_encontrado'?'mb-n':'mb-p';
+  const badgeTxt=op.status==='capturado'?'CAPTURADO':op.status==='nao_encontrado'?'NÃO ENCONTRADO':'PENDENTE';
+  const mands=p.mandados.map(m=>`<div class="mitem"><div class="mnum">${m.num}</div><div class="mtags"><span class="mtag">${m.peca}</span><span class="mtag">${m.data}</span><span class="mtag">${m.orgao}</span></div></div>`).join('');
+  const capF=op.status==='capturado'?`<div class="cap-fields" id="capFB">
+    <div><label>Data da prisão</label><input type="date" id="capDate" value="${op.capDate||''}"></div>
+    <div><label>Local da prisão</label><input type="text" id="capLocal" value="${op.capLocal||''}" placeholder="Rua, bairro..."></div>
+    <div><label>PM responsável</label><input type="text" id="capResp" value="${op.capResp||''}" placeholder="Posto e nome..."></div>
+  </div>`:'<div id="capFB"></div>';
+  const obsHist=(op.obs&&op.obs.length)?[...op.obs].reverse().map(o=>`<div class="obs-entry"><div class="obs-meta">${o.pm||'PM'} · ${o.dt}</div><div class="obs-txt">${o.txt}</div></div>`).join(''):'<div class="obs-empty">Nenhuma observação registrada ainda.</div>';
 
-  const badgeCls = op.status==='capturado'?'mb-c':op.status==='nao_encontrado'?'mb-n':'mb-p';
-  const badgeTxt = op.status==='capturado'?'CAPTURADO':op.status==='nao_encontrado'?'NÃO ENCONTRADO':'PENDENTE';
-
-  const mands = p.mandados.map(m =>
-    `<div class="mitem"><div class="mnum">${m.num}</div>
-     <div class="mtags"><span class="mtag">${m.peca}</span><span class="mtag">${m.data}</span><span class="mtag">${m.orgao}</span></div></div>`
-  ).join('');
-
-  const capF = op.status === 'capturado' ? `
-    <div class="cap-fields" id="capFB">
-      <div><label>Data da prisão</label><input type="date" id="capDate" value="${op.capDate||''}"></div>
-      <div><label>Local da prisão</label><input type="text" id="capLocal" value="${op.capLocal||''}" placeholder="Rua, bairro..."></div>
-      <div><label>PM responsável</label><input type="text" id="capResp" value="${op.capResp||''}" placeholder="Posto e nome..."></div>
-    </div>` : '<div id="capFB"></div>';
-
-  const obsHist = (op.obs && op.obs.length)
-    ? [...op.obs].reverse().map(o =>
-        `<div class="obs-entry"><div class="obs-meta">${o.pm||'PM'} · ${o.dt}</div><div class="obs-txt">${o.txt}</div></div>`
-      ).join('')
-    : '<div class="obs-empty">Nenhuma observação registrada ainda.</div>';
-
-  document.getElementById('modal').innerHTML = `
+  document.getElementById('modal').innerHTML=`
     <div class="mhead">
-      <div style="display:flex;align-items:center;gap:5px">
+      <div style="display:flex;align-items:center;gap:6px">
         <h2>Ficha operacional</h2>
         <span class="mbadge ${badgeCls}">${badgeTxt}</span>
       </div>
-      <button class="mclose" onclick="closeModal()">×</button>
+      <button class="mclose" id="btnCloseModal">×</button>
     </div>
     <div class="mbody">
       <div class="photo-row">
         <div class="photo-box">
-          ${op.foto ? `<img src="${op.foto}" alt="Foto">` : `<div class="ph-hint">👤</div>`}
-          <button class="photo-btn" onclick="askPin('photo')">📷 ${op.foto?'Alterar foto':'Adicionar foto'}</button>
+          ${op.foto?`<img src="${op.foto}" alt="Foto">`:'<div class="ph-hint">👤</div>'}
+          <button class="photo-btn" id="photoBtnModal">📷 ${op.foto?'Alterar':'Adicionar foto'}</button>
         </div>
         <div>
           <div class="pnome">${nome}</div>
-          ${alc ? `<div class="palc">"${alc}"</div>` : ''}
+          ${alc?`<div class="palc">"${alc}"</div>`:''}
           <div class="pmuni">${muni}</div>
           <div class="pmcount">${p.mandados.length} mandado${p.mandados.length>1?'s':''}</div>
         </div>
       </div>
-
       <div class="sec">Identificação</div>
       <div class="fg">
         <div class="fi"><label>Nascimento</label><p>${p.nasc||'—'}${idade?' ('+idade+' anos)':''}</p></div>
@@ -537,227 +474,250 @@ window.openModal = function(nome, muni) {
         <div class="fi fi-full"><label>Nome da Mãe</label><p>${p.mae||'—'}</p></div>
         <div class="fi fi-full"><label>Nome do Pai</label><p>${p.pai||'—'}</p></div>
       </div>
-
       <div class="sec">Mandados (${p.mandados.length})</div>
       ${mands}
-
       <div class="status-sec">
         <div class="sec" style="margin-top:0">Status operacional</div>
         <div class="sbtns">
-          <button class="sbtn sbtn-p${op.status==='pendente'?' active':''}" onclick="setStatus('pendente')">⏳<br>Pendente</button>
-          <button class="sbtn sbtn-c${op.status==='capturado'?' active':''}" onclick="setStatus('capturado')">🔒<br>Capturado</button>
-          <button class="sbtn sbtn-n${op.status==='nao_encontrado'?' active':''}" onclick="setStatus('nao_encontrado')">📍<br>Não enc.</button>
+          <button class="sbtn sbtn-p${op.status==='pendente'?' active':''}" data-st="pendente">⏳<br>Pendente</button>
+          <button class="sbtn sbtn-c${op.status==='capturado'?' active':''}" data-st="capturado">🔒<br>Capturado</button>
+          <button class="sbtn sbtn-n${op.status==='nao_encontrado'?' active':''}" data-st="nao_encontrado">📍<br>Não enc.</button>
         </div>
         ${capF}
-        <button class="btn-save" id="btnSaveStatus" onclick="saveStatus()">💾 Salvar status</button>
+        <button class="btn-save" id="btnSaveStatus">💾 Salvar status</button>
       </div>
-
       <div class="status-sec">
         <div class="sec" style="margin-top:0">Diligências / observações</div>
         <div class="obs-block">
           <label>Identificação do PM</label>
-          <input class="obs-in" type="text" id="obsPM" placeholder="Ex: Sd Silva, BM 12345..." maxlength="80">
-          <label style="margin-top:2px;display:block">Observação / diligência realizada</label>
-          <textarea class="obs-in" id="obsText" placeholder="Endereço visitado, informação obtida, diligência realizada..."></textarea>
-          <button class="btn-obs" id="btnObs" onclick="addObs()">+ Registrar observação</button>
+          <input class="obs-in" type="text" id="obsPM" placeholder="Ex: Sd Silva, BM 12345...">
+          <label style="margin-top:4px;display:block">Observação / diligência</label>
+          <textarea class="obs-in" id="obsText" placeholder="Endereço visitado, informação obtida..."></textarea>
+          <button class="btn-obs" id="btnObs">+ Registrar observação</button>
           <div class="obs-hist" id="obsHist">${obsHist}</div>
         </div>
       </div>
     </div>`;
 
   document.getElementById('modalOv').classList.add('open');
+  document.getElementById('modalOv').scrollTop = 0;
 };
 
 window.setStatus = function(st) {
-  const k = pKey(_nome, _muni);
-  if (!OPS[k]) OPS[k] = {status:'pendente', obs:[], capDate:'', capLocal:'', capResp:'', foto:''};
-  OPS[k].status = st;
-  document.querySelectorAll('.sbtn').forEach(b => {
+  const k=pKey(_nome,_muni);
+  if(!OPS[k]) OPS[k]={status:'pendente',obs:[],capDate:'',capLocal:'',capResp:'',foto:''};
+  OPS[k].status=st;
+  document.querySelectorAll('.sbtn').forEach(b=>{
     b.classList.remove('active');
-    if ((st==='pendente'&&b.classList.contains('sbtn-p')) ||
-        (st==='capturado'&&b.classList.contains('sbtn-c')) ||
-        (st==='nao_encontrado'&&b.classList.contains('sbtn-n'))) b.classList.add('active');
+    if(b.dataset.st===st) b.classList.add('active');
   });
-  const blk = document.getElementById('capFB');
-  if (blk) blk.innerHTML = st === 'capturado' ? `
-    <div class="cap-fields" style="margin-top:9px">
-      <div><label>Data da prisão</label><input type="date" id="capDate"></div>
-      <div><label>Local da prisão</label><input type="text" id="capLocal" placeholder="Rua, bairro..."></div>
-      <div><label>PM responsável</label><input type="text" id="capResp" placeholder="Posto e nome..."></div>
-    </div>` : '';
+  const blk=document.getElementById('capFB');
+  if(blk) blk.innerHTML=st==='capturado'?`<div class="cap-fields" style="margin-top:10px">
+    <div><label>Data da prisão</label><input type="date" id="capDate"></div>
+    <div><label>Local da prisão</label><input type="text" id="capLocal" placeholder="Rua, bairro..."></div>
+    <div><label>PM responsável</label><input type="text" id="capResp" placeholder="Posto e nome..."></div>
+  </div>`:'';
 };
 
 window.saveStatus = async function() {
-  const btn = document.getElementById('btnSaveStatus');
-  if (btn) { btn.disabled = true; btn.textContent = '⏳ Salvando...'; }
-  const k = pKey(_nome, _muni);
-  if (!OPS[k]) OPS[k] = {status:'pendente', obs:[], capDate:'', capLocal:'', capResp:'', foto:''};
-  const cd=document.getElementById('capDate'), cl=document.getElementById('capLocal'), cr=document.getElementById('capResp');
-  if (cd) OPS[k].capDate = cd.value;
-  if (cl) OPS[k].capLocal = cl.value;
-  if (cr) OPS[k].capResp = cr.value;
-  OPS[k].statusUpdated = nowFull();
-  await saveOp(_nome, _muni, OPS[k]);
-  closeModal();
+  const btn=document.getElementById('btnSaveStatus');
+  if(btn){btn.disabled=true;btn.textContent='⏳ Salvando...';}
+  const k=pKey(_nome,_muni);
+  if(!OPS[k]) OPS[k]={status:'pendente',obs:[],capDate:'',capLocal:'',capResp:'',foto:''};
+  const cd=document.getElementById('capDate'),cl=document.getElementById('capLocal'),cr=document.getElementById('capResp');
+  if(cd) OPS[k].capDate=cd.value;
+  if(cl) OPS[k].capLocal=cl.value;
+  if(cr) OPS[k].capResp=cr.value;
+  OPS[k].statusUpdated=nowFull();
+  await saveOp(_nome,_muni,OPS[k]);
+  document.getElementById('modalOv').classList.remove('open');
   renderGallery();
 };
 
 window.addObs = async function() {
-  const txt = (document.getElementById('obsText').value||'').trim();
-  const pm  = (document.getElementById('obsPM').value||'').trim() || 'PM';
-  if (!txt) { document.getElementById('obsText').focus(); return; }
-  const btn = document.getElementById('btnObs');
-  if (btn) { btn.disabled = true; btn.textContent = '⏳ Registrando...'; }
-  const k = pKey(_nome, _muni);
-  if (!OPS[k]) OPS[k] = {status:'pendente', obs:[], capDate:'', capLocal:'', capResp:'', foto:''};
-  if (!OPS[k].obs) OPS[k].obs = [];
-  const entry = {pm, txt, dt: nowFull()};
+  const txt=(document.getElementById('obsText').value||'').trim();
+  const pm=(document.getElementById('obsPM').value||'').trim()||'PM';
+  if(!txt){document.getElementById('obsText').focus();return;}
+  const btn=document.getElementById('btnObs');
+  if(btn){btn.disabled=true;btn.textContent='⏳ Registrando...';}
+  const k=pKey(_nome,_muni);
+  if(!OPS[k]) OPS[k]={status:'pendente',obs:[],capDate:'',capLocal:'',capResp:'',foto:''};
+  if(!OPS[k].obs) OPS[k].obs=[];
+  const entry={pm,txt,dt:nowFull()};
   OPS[k].obs.push(entry);
-  await saveOp(_nome, _muni, OPS[k]);
-  if (btn) { btn.disabled = false; btn.textContent = '+ Registrar observação'; }
-  document.getElementById('obsText').value = '';
-  const hist = document.getElementById('obsHist');
-  if (hist) {
-    const d = document.createElement('div');
-    d.className = 'obs-entry';
-    d.innerHTML = `<div class="obs-meta">${pm} · ${entry.dt}</div><div class="obs-txt">${txt}</div>`;
-    const empty = hist.querySelector('.obs-empty'); if (empty) empty.remove();
-    hist.insertBefore(d, hist.firstChild);
+  await saveOp(_nome,_muni,OPS[k]);
+  if(btn){btn.disabled=false;btn.textContent='+ Registrar observação';}
+  document.getElementById('obsText').value='';
+  const hist=document.getElementById('obsHist');
+  if(hist){
+    const div=document.createElement('div');
+    div.className='obs-entry';
+    div.innerHTML=`<div class="obs-meta">${pm} · ${entry.dt}</div><div class="obs-txt">${txt}</div>`;
+    const empty=hist.querySelector('.obs-empty');if(empty)empty.remove();
+    hist.insertBefore(div,hist.firstChild);
   }
   renderGallery();
 };
 
-// ─────────────────────────────────────────────
-// FOTO (salva como base64 no Firestore)
-// ─────────────────────────────────────────────
+// ── FOTO ───────────────────────────────────────────
 window.doLoadPhoto = async function(e) {
-  const f = e.target.files[0];
-  if (!f || !_nome) return;
-  const btn = document.querySelector('.photo-btn');
-  if (btn) { btn.textContent = '⏳ Enviando...'; btn.disabled = true; }
-  const MAX = 400;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    const img = new Image();
-    img.onload = async () => {
-      const canvas = document.createElement('canvas');
-      let w = img.width, h = img.height;
-      if (w > MAX || h > MAX) { const r = Math.min(MAX/w,MAX/h); w=Math.round(w*r); h=Math.round(h*r); }
-      canvas.width=w; canvas.height=h;
+  const f=e.target.files[0]; if(!f||!_nome) return;
+  const btn=document.getElementById('photoBtnModal');
+  if(btn){btn.textContent='⏳ Enviando...';btn.disabled=true;}
+  const MAX=420;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    const img=new Image();
+    img.onload=async()=>{
+      const canvas=document.createElement('canvas');
+      let w=img.width,h=img.height;
+      if(w>MAX||h>MAX){const r=Math.min(MAX/w,MAX/h);w=Math.round(w*r);h=Math.round(h*r);}
+      canvas.width=w;canvas.height=h;
       canvas.getContext('2d').drawImage(img,0,0,w,h);
-      const data = canvas.toDataURL('image/jpeg', 0.80);
-      const k = pKey(_nome, _muni);
-      if (!OPS[k]) OPS[k] = {status:'pendente', obs:[], capDate:'', capLocal:'', capResp:'', foto:''};
-      OPS[k].foto = data;
-      await saveOp(_nome, _muni, OPS[k]);
-      // Atualiza na ficha
-      const box = document.querySelector('.photo-box');
-      if (box) {
-        const hint = box.querySelector('.ph-hint'); if(hint) hint.remove();
-        let img2 = box.querySelector('img');
-        if (!img2) { img2=document.createElement('img'); img2.alt='Foto'; box.insertBefore(img2,box.firstChild); }
-        img2.src = data;
-        const b2 = box.querySelector('.photo-btn');
-        if (b2) { b2.textContent='📷 Alterar foto'; b2.disabled=false; }
+      const data=canvas.toDataURL('image/jpeg',0.80);
+      const k=pKey(_nome,_muni);
+      if(!OPS[k]) OPS[k]={status:'pendente',obs:[],capDate:'',capLocal:'',capResp:'',foto:''};
+      OPS[k].foto=data;
+      await saveOp(_nome,_muni,OPS[k]);
+      const box=document.querySelector('.photo-box');
+      if(box){
+        const hint=box.querySelector('.ph-hint');if(hint)hint.remove();
+        let img2=box.querySelector('img');
+        if(!img2){img2=document.createElement('img');img2.alt='Foto';box.insertBefore(img2,box.firstChild);}
+        img2.src=data;
+        const b2=box.querySelector('.photo-btn');
+        if(b2){b2.textContent='📷 Alterar';b2.disabled=false;}
       }
       renderGallery();
     };
-    img.src = ev.target.result;
+    img.src=ev.target.result;
   };
   reader.readAsDataURL(f);
-  e.target.value = '';
+  e.target.value='';
 };
 
-// ─────────────────────────────────────────────
-// PIN
-// ─────────────────────────────────────────────
+// ── PIN ────────────────────────────────────────────
 window.askPin = function(purpose) {
-  pinCallback = purpose;
-  document.getElementById('pinPurpose').textContent =
-    purpose==='photo' ? 'Adicionar / alterar foto do indiciado' :
-    purpose==='csv'   ? 'Importar novos arquivos CSV' : '—';
-  document.getElementById('pinIn').value = '';
-  document.getElementById('pinErr').textContent = '';
+  pinCallback=purpose;
+  document.getElementById('pinPurpose').textContent=
+    purpose==='photo'?'Adicionar / alterar foto do indiciado':
+    purpose==='csv'?'Importar novos arquivos CSV':'—';
+  document.getElementById('pinIn').value='';
+  document.getElementById('pinErr').textContent='';
   document.getElementById('pinOv').classList.add('open');
-  setTimeout(() => document.getElementById('pinIn').focus(), 80);
+  setTimeout(()=>document.getElementById('pinIn').focus(),100);
 };
 window.chkPin = function() {
-  if (document.getElementById('pinIn').value === ADMIN_PIN) {
-    closePinOv();
-    if (pinCallback==='csv')   openUpl();
-    if (pinCallback==='photo') document.getElementById('photoIn').click();
+  if(document.getElementById('pinIn').value===ADMIN_PIN){
+    document.getElementById('pinOv').classList.remove('open');
+    if(pinCallback==='csv'){
+      document.getElementById('uplOk').style.display='none';
+      document.getElementById('uplErr').style.display='none';
+      document.getElementById('uplOv').classList.add('open');
+    }
+    if(pinCallback==='photo') document.getElementById('photoIn').click();
   } else {
-    document.getElementById('pinErr').textContent = 'Senha incorreta. Tente novamente.';
-    document.getElementById('pinIn').value = '';
+    document.getElementById('pinErr').textContent='Senha incorreta. Tente novamente.';
+    document.getElementById('pinIn').value='';
     document.getElementById('pinIn').focus();
   }
 };
-window.closePinOv = function() { document.getElementById('pinOv').classList.remove('open'); };
 
-// ─────────────────────────────────────────────
-// MODAIS
-// ─────────────────────────────────────────────
-window.closeModal      = () => document.getElementById('modalOv').classList.remove('open');
-window.closeModalOuter = e  => { if(e.target===document.getElementById('modalOv')) closeModal(); };
-window.openUpl         = () => { document.getElementById('uplOk').style.display='none'; document.getElementById('uplErr').style.display='none'; document.getElementById('uplOv').classList.add('open'); };
-window.closeUpl        = () => document.getElementById('uplOv').classList.remove('open');
-window.closeUplOuter   = e  => { if(e.target===document.getElementById('uplOv')) closeUpl(); };
-
-// ─────────────────────────────────────────────
-// CSV
-// ─────────────────────────────────────────────
+// ── CSV ────────────────────────────────────────────
 function detectMuni(fn) {
-  const f = fn.toLowerCase();
-  if (f.includes('mucurici'))  return 'MUCURICI';
-  if (f.includes('montanha'))  return 'MONTANHA';
-  if (f.includes('pinheiros')) return 'PINHEIROS';
-  if (f.includes('ponto_belo')||f.includes('ponto belo')) return 'PONTO BELO';
+  const f=fn.toLowerCase();
+  if(f.includes('mucurici'))  return 'MUCURICI';
+  if(f.includes('montanha'))  return 'MONTANHA';
+  if(f.includes('pinheiros')) return 'PINHEIROS';
+  if(f.includes('ponto_belo')||f.includes('ponto belo')) return 'PONTO BELO';
   return fn.toUpperCase().replace(/\.CSV$/i,'').replace(/RELATORIO_-_/i,'').trim();
 }
-function parseCSV(txt, muni) {
-  const lines = txt.replace(/\r\n/g,'\n').replace(/\r/g,'\n').trim().split('\n');
-  if (lines.length < 2) return [];
-  const hdr = lines[0].split(';').map(h=>h.trim());
-  return lines.slice(1).filter(l=>l.trim()).map(l => {
-    const vals=l.split(';'), obj={};
-    hdr.forEach((h,i) => obj[h]=(vals[i]||'').trim());
+function parseCSV(txt,muni) {
+  const lines=txt.replace(/\r\n/g,'\n').replace(/\r/g,'\n').trim().split('\n');
+  if(lines.length<2) return [];
+  const hdr=lines[0].split(';').map(h=>h.trim());
+  return lines.slice(1).filter(l=>l.trim()).map(l=>{
+    const vals=l.split(';'),obj={};
+    hdr.forEach((h,i)=>obj[h]=(vals[i]||'').trim());
     obj['municipio']=muni; return obj;
   });
 }
 window.handleCSV = function(e) {
-  const files = Array.from(e.target.files); if(!files.length) return;
-  let pending=files.length, newRows=[];
-  const ok=document.getElementById('uplOk'), err=document.getElementById('uplErr');
+  const files=Array.from(e.target.files); if(!files.length) return;
+  let pending=files.length,newRows=[];
+  const ok=document.getElementById('uplOk'),err=document.getElementById('uplErr');
   ok.style.display='none'; err.style.display='none';
-  files.forEach(f => {
-    const muni = detectMuni(f.name);
-    const rd = new FileReader();
-    rd.onload = async ev => {
-      newRows = newRows.concat(parseCSV(ev.target.result, muni));
-      if (--pending === 0) {
-        try {
-          const munis = new Set(files.map(f=>detectMuni(f.name)));
-          RAW = RAW.filter(r=>!munis.has(r['municipio'])).concat(newRows);
+  files.forEach(f=>{
+    const muni=detectMuni(f.name);
+    const rd=new FileReader();
+    rd.onload=async ev=>{
+      newRows=newRows.concat(parseCSV(ev.target.result,muni));
+      if(--pending===0){
+        try{
+          const munis=new Set(files.map(f=>detectMuni(f.name)));
+          RAW=RAW.filter(r=>!munis.has(r['municipio'])).concat(newRows);
           await saveRaw();
-          ok.textContent = `✓ ${newRows.length} registros salvos no Firebase — visíveis para toda a tropa.`;
-          ok.style.display = 'block';
+          ok.textContent=`✓ ${newRows.length} registros salvos. Visíveis para toda a tropa.`;
+          ok.style.display='block';
           renderGallery();
-          setTimeout(closeUpl, 2500);
-        } catch(ex) {
-          err.textContent = '✗ Erro ao salvar no Firebase: ' + ex.message;
-          err.style.display = 'block';
-        }
+          setTimeout(()=>document.getElementById('uplOv').classList.remove('open'),2500);
+        }catch(ex){err.textContent='✗ Erro: '+ex.message;err.style.display='block';}
       }
     };
-    rd.onerror = () => { err.textContent='✗ Erro ao ler arquivo '+f.name; err.style.display='block'; };
-    rd.readAsText(f, 'UTF-8');
+    rd.readAsText(f,'UTF-8');
   });
-  e.target.value = '';
+  e.target.value='';
 };
 
-// ─────────────────────────────────────────────
-// START
-// ─────────────────────────────────────────────
+// ── EVENT LISTENERS (all centralized here) ─────────
+document.addEventListener('click', e => {
+  // Card click → open modal
+  const card = e.target.closest('.card[data-idx]');
+  if (card) {
+    const idx = parseInt(card.dataset.idx);
+    const entry = cardMap[idx];
+    if (entry) openModal(entry.nome, entry.muni);
+    return;
+  }
+  // Status buttons
+  const sbtn = e.target.closest('.sbtn[data-st]');
+  if (sbtn) { setStatus(sbtn.dataset.st); return; }
+  // Close modal (backdrop or X button)
+  if (e.target === document.getElementById('modalOv') || e.target.id === 'btnCloseModal') {
+    document.getElementById('modalOv').classList.remove('open'); return;
+  }
+  // Photo btn
+  if (e.target.closest('#photoBtnModal')) { askPin('photo'); return; }
+  // Save status
+  if (e.target.id === 'btnSaveStatus') { saveStatus(); return; }
+  // Add obs
+  if (e.target.id === 'btnObs') { addObs(); return; }
+  // CSV button
+  if (e.target.closest('#btnCsv')) { askPin('csv'); return; }
+  // Close CSV modal
+  if (e.target === document.getElementById('uplOv') || e.target.id === 'btnCloseUpl') {
+    document.getElementById('uplOv').classList.remove('open'); return;
+  }
+  // PIN confirm
+  if (e.target.id === 'pinConfirm') { chkPin(); return; }
+  // PIN cancel
+  if (e.target.id === 'pinCancel') { document.getElementById('pinOv').classList.remove('open'); return; }
+  // Upload area
+  if (e.target.closest('#uplArea')) { document.getElementById('csvIn').click(); return; }
+});
+
+// PIN enter key
+document.getElementById('pinIn').addEventListener('keydown', e => {
+  if (e.key === 'Enter') chkPin();
+});
+
+// CSV file input
+document.getElementById('csvIn').addEventListener('change', handleCSV);
+
+// Photo file input
+document.getElementById('photoIn').addEventListener('change', window.doLoadPhoto);
+
+// ── START ──────────────────────────────────────────
 init();
 </script>
 </body>
